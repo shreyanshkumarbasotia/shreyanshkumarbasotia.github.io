@@ -3,40 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            transition: background-color 0.5s ease;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo img {
+            width: 100px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .nav-list li {
+            padding: 0 20px;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        #search {
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 9px;
+            margin-right: 10px;
+            border: none;
+        }
+
+        .mode-switch {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            color: white;
+        }
+
+        .mode-switch input[type="checkbox"] {
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+
+        .slider {
+            position: relative;
+            height: 25px;
+            width: 50px;
+            background-color: gray;
+            border-radius: 50px;
+            margin-right: 10px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: '';
+            height: 21px;
+            width: 21px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+
+        .firstsection {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3vw; /* Increase font size */
+            background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: linear-wipe 1s linear infinite;
+        }
+
+        @keyframes linear-wipe {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .map-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 300px; /* Reduce map width */
+            margin-left: 20px; /* Move map to leftmost side */
+            z-index: 1;
+            padding-top: 100px; /* Adjust padding to avoid overlapping with navbar */
+        }
+
+        .mapouter {
+            position: relative;
+            text-align: right;
+            height: 100%;
+            width: 100%;
+        }
+
+        .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 100%;
+            width: 100%;
+        }
+
+        .thank-you-text {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: white;
+        }
+
+        .projectssection {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3vw;
+            background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: linear-wipe 1s linear infinite;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar background">
-        <ul class="nav-list">                   <!-- Website navigation bar top -->
-            <div class="logo"><img src="logo.jpg" alt="logo"></div>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#connect">Connect</a></li>
-            
+    <nav class="navbar">
+        <div class="logo"><img src="logo.jpg" alt="logo"></div>
+        <ul class="nav-list">
+            <li><a href="https://shreyanshkumarbasotia.blogspot.com/">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="https://youtube.com/shorts/z9VLLIB_6I0?si=ANSiYoIaLBMUINB9">Connect</a></li>
         </ul>
         <div class="rightnav">
+            <div class="mode-switch">
+                <label class="switch">
+                    <input type="checkbox" id="modeSwitch">
+                    <span class="slider round"></span>
+                </label>
+                <span>Dark Mode</span>
+            </div>
             <input type="text" name="search" id="search">
-            <button class="btn btn-sm">search</button>
+            <button class="btn btn-sm">Search</button>
         </div>
     </nav>
 
-    <section class="background firstsection">
+    <section class="firstsection">
         <div class="box-main">
-            <div class="firsthalf"></div>
-            <h1 class="linear-wipe">THE NEXT BIG THING</h1>
-            <!-- <p class="text-big">Hello everyone</p> -->
-            <!-- p class="text-small">i am shreyansh</p>< -->
-            <!-- <div class="buttons">
-                <button class="btn">Text</button>
-                <button class="btn">Text</button>
-            </div> -->
-        
+            <div class="linear-wipe">
+                <h1 class="blink">THE NEXT BIG THING</h1>
+            </div>
         </div>
-    
-
-
     </section>
+
+    <div class="map-container">
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="300" height="300" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=kiit+university&t=&z=18&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                        href="https://www.analarmclock.com/"></a><br><a href="https://www.onclock.net/"></a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 100%;
+                        width: 100%;
+                    }
+                </style><a href="https://www.ongooglemaps.com">html map area</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 100%;
+                        width: 100%;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+
+    <div class="projectssection">
+        <div class="box-main">
+            <div class="linear-wipe">
+                <h1 class="blink">COMING SOON..</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Light/Dark Mode Script -->
+    <script>
+        const modeSwitch = document.getElementById('modeSwitch');
+        modeSwitch.addEventListener('change', () => {
+            document.body.classList.toggle('dark-theme');
+            document.getElementById('search').classList.toggle('light-mode');
+        });
+    </script>
 </body>
 </html>
