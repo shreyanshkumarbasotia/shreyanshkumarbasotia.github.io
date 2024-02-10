@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    width:20%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width:33%;
+    border: 3px solid white;
+    border-radius: 50px;
+}
+.navbar {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center; 
+    position: sticky; 
+    top:0; 
+    /* cursor:pointer; */
+}
+
+.nav-list {
+    width: 50%;
+    background-color: black;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+
+}
+
+.nav-list li {
+    list-style: none;
+    padding: 26px 30px;
+
+    
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+
+}
+.nav-list li a:hover{
+    color: grey;
+
+}
+
+.rightnav {
+    background-color: black;
+    width: 50%;
+    text-align: right;
+}
+
+#search{
+    padding: 5px;
+    font-size: 17px;
+    border-radius: 9px;
+    margin-top: 15px
+
+}
+
+/* .background{     
+    background: rgba(0,0,0,0.7) url('bg.jpg');   /* ADD BACKGROUND
+    background-size:cover;
+    background-blend-mode: darken;
+
+} */
+
+.firstsection{
+    height: 100vh;
+    background-color: black;
+}
+
+
+.box-main{
+    display: block;
+    justify-content: center;
+    align-items:center;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 50%;
+    margin: auto;
+    height: -webkit-fill-available;  /* IDK EXPERIMENED IT*/
+
+}
+
+.firsthalf{
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+h1 {
+    font-size: 5vw;
+  }
+  
+  .linear-wipe {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    height: 100vh; /* Ensure the container takes up the full viewport height */
+    text-align: center;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: linear-wipe 1s linear infinite;
+  }
+  
+  @keyframes linear-wipe {
+    to {
+      background-position: 200% center;
+    }
+  }
+  
